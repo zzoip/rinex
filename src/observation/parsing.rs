@@ -109,7 +109,7 @@ pub fn parse_epoch(
         .map_err(|_| ParsingError::NumSatParsing)?;
 
     // grab possible clock offset
-    let offs: Option<&str> = match header.version.major < 2 {
+    let offs: Option<&str> = match header.version.major <= 2 {
         true => {
             // RINEX 2
             // clock offsets are last 12 characters
