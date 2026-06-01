@@ -140,6 +140,7 @@ pub fn parse_epoch(
 
     if let Some(offset) = offs {
         if let Ok(offset_s) = parse_f64(offset) {
+            println!("Offset: {}, offset_s: {}", offset, offset_s);
             observations
                 .with_clock_observation(ClockObservation::default().with_offset_s(epoch, offset_s));
         }
